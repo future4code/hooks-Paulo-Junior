@@ -143,7 +143,7 @@
 // console.log('450 xic equivalem a', conversaoemlitros+'l')
 
 //desafio 3.g)
-const milha = Number(prompt('Digite um valor em milhas'))
-const conversaoemmetros = milha * 1609
+// const milha = Number(prompt('Digite um valor em milhas'))
+// const conversaoemmetros = milha * 1609
 
-console.log(milha+'mi equivalem a', conversaoemmetros+'m')
+// console.log(milha+'mi equivalem a', conversaoemmetros+'m')
