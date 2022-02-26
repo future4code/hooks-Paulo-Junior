@@ -48,7 +48,7 @@
 // c) Considere que um usuário queira comprar uma `Pêra`, qual seria a mensagem impressa no console se retirássemos o `break` que está logo acima do `default` (o `break` indicado pelo comentário "BREAK PARA O ITEM c.")?
 //r: ele vai imprimir o último preco antes do break, que nesse caso é 5
 
-//-------------EXERCÍCIO DE INTERPRETAÇÃO DE CÓDIGO 3 -----
+//------------- EXERCÍCIO DE INTERPRETAÇÃO DE CÓDIGO 3 -----
 // const numero = Number(prompt("Digite o primeiro número."))
 
 // if(numero > 0) {
@@ -67,7 +67,7 @@
 // c) Haverá algum erro no console? Justifique usando os conceitos de bloco ou escopo.
 // r: o erro que aparece é pelo fato de a variável mensagem ser de escopo local e o último console.log chamar ela, sendo que ela deveria ser de escopo global
 
-//-------------EXERCÍCIO DE ESCRITA DE CÓDIGO 1 -----
+//------------- EXERCÍCIO DE ESCRITA DE CÓDIGO 1 -----
 // 1. Faça um programa que pergunta ao usuário qual a idade dele e imprima no console se ele/ela pode dirigir (apenas maiores de idade).
     
 //     a) Faça um `prompt` para receber a idade do usuário e guarde em uma variável.
@@ -84,7 +84,7 @@
 //        console.log('você não pode dirigir')
 //    }'
 
-//-------------EXERCÍCIO DE ESCRITA DE CÓDIGO 2 -----
+//------------- EXERCÍCIO DE ESCRITA DE CÓDIGO 2 -----
 // Agora faça um programa que verifica que turno do dia um aluno estuda. Peça para digitar M (matutino) ou V (Vespertino) ou N (Noturno). Imprima no console a mensagem "Bom Dia!", "Boa Tarde!" ou "Boa Noite!". Utilize o bloco if/else
 
 // const turno = prompt('qual turno você estuda? Digite M para matutino V para vespertino e N para noturno')
@@ -97,7 +97,7 @@
 //     console.log('Boa noite!')
 // }
 
-//-------------EXERCÍCIO DE ESCRITA DE CÓDIGO 3 -----
+//------------- EXERCÍCIO DE ESCRITA DE CÓDIGO 3 -----
 // Repita o exercício anterior, mas utilizando a estrutura de switch case agora.
 
 // const turno = prompt('qual turno você estuda? Digite M para matutino V para vespertino e N para noturno')
@@ -113,19 +113,74 @@
 //         break;
 // }
 
-//-------------EXERCÍCIO DE ESCRITA DE CÓDIGO 4 -----
+//------------- EXERCÍCIO DE ESCRITA DE CÓDIGO 4 -----
 // Considere a situação: você vai ao cinema com um amigo ou amiga, porém ele/ela só assistirá a um filme com você se ele for do gênero fantasia e se o ingresso está abaixo de 15 reais. Faça um código que pergunta ao usuário qual o gênero de filme que vão assistir e outra pergunta sobre o preço do ingresso, então verifique se seu amigo ou amiga vai topar assistir o filme. Caso positivo, imprima no console a mensagem: "Bom filme!", caso contrário, imprima "Escolha outro filme :("
 
-const filme = prompt('Digite o gênero do filme')
-const valor = Number(prompt('Qual o valor do filme?'))
+// const filme = prompt('Digite o gênero do filme')
+// const valor = Number(prompt('Qual o valor do filme?'))
 
-function cinema (par1,par2){
-const genero = (par1 === 'fantasia')
-const ingresso = (par2 < 15)
-if (genero && ingresso) {
-    console.log('Bom filme!')
-}else{
-    console.log('Escolha outro filme!')
+// function cinema (par1,par2){
+// const genero = (par1 === 'fantasia')
+// const ingresso = (par2 < 15)
+// if (genero && ingresso) {
+//     console.log('Bom filme!')
+// }else{
+//     console.log('Escolha outro filme!')
+// }
+// }
+// cinema(filme,valor)
+
+//------------- DESAFIO DE CÓDIGO 1 -----
+// const filme = prompt('Digite o gênero do filme')
+// const valor = Number(prompt('Qual o valor do filme?'))
+// const lanche = prompt('qual lanchinho você irá comprar?')
+
+// function cinema (par1,par2){
+// const genero = (par1 === 'fantasia')
+// const ingresso = (par2 < 15)
+// if (genero && ingresso) {
+//     console.log('Bom filme! e aproveite o seu', lanche)
+// }else{
+//     console.log('Escolha outro filme!')
+// }
+// }
+// cinema(filme,valor)
+
+//------------- DESAFIO DE CÓDIGO 2 -----
+// 2. Você foi contratado para criar um sistema de vendas de ingressos de jogos de um estádio de futebol. Para esta compra, o usuário deve fornecer algumas informações:
+//     - Nome completo;
+//     - Tipo de jogo: IN indica internacional; e DO indica doméstico;
+//     - Etapa do jogo: SF indica semi-final; DT indica decisão de terceiro lugar; e FI indica final
+//     - Categoria: pode ser as opções 1, 2, 3 ou 4;
+//     - Quantidade de ingressos
+const nome = prompt('Qual é o seu nome?')
+const tipo = prompt('digite qual será o tipo de jogo, IN ou DO?')
+
+const etapa = prompt('Qual será a etapa do jogo SF, DT ou FI ?')
+
+const categoria = Number(prompt('qual a categoria, 1,2,3 ou 4?'))
+const quantidadeDeIngreso = Number(prompt('quantos ingressos você deseja comprar?','apenas números'))
+
+
+function imprime (tipo, etapa){
+    console.log('-----Dados de compra-----')
+    console.log(`Nome do cliente: ${nome}`)
+    if(tipo === 'IN'){
+        console.log('Tipo de jogo: Internacional')
+     } else {
+         console.log('Tipo de jogo: Nacional')
+     }
+     if(etapa === 'SF'){
+        console.log('Etapa do jogo: Semi-final')
+    } else if ( etapa === 'DT'){
+        console.log('Etapa do jogo: Decisão de terceiro lugar')
+    } else {
+        console.log('Etapa do jogo: Final')
+    }
+    console.log(`Categoria: ${categoria}`)
+    console.log(`Quantidade de ingressos: ${quantidadeDeIngreso}`)
 }
-}
-cinema(filme,valor)
+imprime(tipo,etapa)
+
+console.log('-----Valores------')
+
