@@ -147,17 +147,12 @@
 // cinema(filme,valor)
 
 //------------- DESAFIO DE CÓDIGO 2 -----
-// 2. Você foi contratado para criar um sistema de vendas de ingressos de jogos de um estádio de futebol. Para esta compra, o usuário deve fornecer algumas informações:
-//     - Nome completo;
-//     - Tipo de jogo: IN indica internacional; e DO indica doméstico;
-//     - Etapa do jogo: SF indica semi-final; DT indica decisão de terceiro lugar; e FI indica final
-//     - Categoria: pode ser as opções 1, 2, 3 ou 4;
-//     - Quantidade de ingressos
+
 const nome = prompt('Qual é o seu nome?')
-const tipo = prompt('digite qual será o tipo de jogo, IN ou DO?')
-
-const etapa = prompt('Qual será a etapa do jogo SF, DT ou FI ?')
-
+let tipo = prompt('digite qual será o tipo de jogo, IN ou DO?')
+tipo = tipo.toUpperCase()
+let etapa = prompt('Qual será a etapa do jogo SF, DT ou FI ?')
+etapa = etapa.toUpperCase()
 const categoria = Number(prompt('qual a categoria, 1,2,3 ou 4?'))
 const quantidadeDeIngreso = Number(prompt('quantos ingressos você deseja comprar?','apenas números'))
 
@@ -182,5 +177,78 @@ function imprime (tipo, etapa){
 }
 imprime(tipo,etapa)
 
+let precoUnitario;
+
+switch (etapa) {
+  case "SF":
+    switch (categoria) {
+      case 1:
+        precoUnitario = 1320;
+        break;
+      case 2:
+        precoUnitario = 880;
+        break;
+      case 3:
+        precoUnitario = 550;
+        break;
+      case 4:
+        precoUnitario = 220;
+        break;
+      default:
+        precoUnitario = 0;
+        break;
+    }
+    break;
+  case "DT":
+    switch (categoria) {
+      case 1:
+        precoUnitario = 660;
+        break;
+      case 2:
+        precoUnitario = 440;
+        break;
+      case 3:
+        precoUnitario = 330;
+        break;
+      case 4:
+        precoUnitario = 170;
+        break;
+      default:
+        precoUnitario = 0;
+        break;
+    }
+    break;
+  case "FI":
+    switch (categoria) {
+      case 1:
+        precoUnitario = 1980;
+        break;
+      case 2:
+        precoUnitario = 1320;
+        break;
+      case 3:
+        precoUnitario = 880;
+        break;
+      case 4:
+        precoUnitario = 330;
+        break;
+      default:
+        precoUnitario = 0;
+        break;
+    }
+    break;
+  default:
+    break;
+}
+switch (tipo) {
+    case 'IN':
+        precoUnitario = precoUnitario * 4.10
+        break;
+
+    default:
+        break;
+}
 console.log('-----Valores------')
+console.log("Valor do Ingresso:", precoUnitario.toFixed(2));
+console.log("Valor Total da Compra:", (precoUnitario * quantidadeDeIngreso).toFixed(2));
 
