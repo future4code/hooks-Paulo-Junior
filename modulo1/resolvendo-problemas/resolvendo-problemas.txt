@@ -1,0 +1,14 @@
+Os sete passos para resolver problemas, como o próprio nome já deixa claro, são sete dicas de como resolver um problema em progamação.
+1- Ter atenção no enuciado
+2- Retirar informações relevantes
+3- Pensar entradas e saídas
+4- Fazer um esquema visual
+5- Criar código Feio 
+6- Testar força bruta
+7- Refatorar
+
+Eles podem nos ajudar de diferentes formas, é necessário ter muita atenção no enuciado, pois é dele que iremos tirar todas respostas pro nosso código.
+Ao mesmo tempo que fomos lendo o enuciado e colocando os dados em uma anotação, deve-se pensar as entradas e saídas, e uma ótima forma de fazer isso é usando algo visual como um fluxograma.
+Depois é recomendado criar um "código feio", o que isso significa? Que devemos colocar a ideia em pratica, sem nos preocucarmos com a perfomance do código, por enquanto.
+Após isso devemos começar a testar o código, tentar encontrar possíveis erros.
+Por fim, devemos refatorar o código, resumindo, melhorar o código.
