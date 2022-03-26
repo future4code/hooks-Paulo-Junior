@@ -102,15 +102,18 @@
 
 
 // e) Escreva um programa que imprima no console o maior e o menor números contidos no array original
-const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-let maiorNum =  arrayOriginal[0]
-let menorNum = arrayOriginal[0]
-for (let num of arrayOriginal) {
-    if(num > maiorNum){
-      maiorNum = num
-    } else if(num < menorNum) {
-      menorNum = num
-    }
+// const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// let maiorNum =  arrayOriginal[0]
+// let menorNum = arrayOriginal[0]
+// for (let num of arrayOriginal) {
+//     if(num > maiorNum){
+//       maiorNum = num
+//     } else if(num < menorNum) {
+//       menorNum = num
+//     }
     
-    }
-    console.log(`O maior número é: ${maiorNum}, e o menor número é ${menorNum}`)
+//     }
+//     console.log(`O maior número é: ${maiorNum}, e o menor número é ${menorNum}`)
+
+//-------------   DESAFIO DE CÓDIGO ---------------
+const numInicial = prompt('Digite um número', 'De preferência menor que 100')
