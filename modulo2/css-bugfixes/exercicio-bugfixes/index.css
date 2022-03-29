@@ -67,6 +67,8 @@ div img {
   **/
 
 #container-de-descricao {
+    /*border: 2px solid red;*/
+    padding-top: 10%;
     background-color: #2274a5;
     color: white;
 }
