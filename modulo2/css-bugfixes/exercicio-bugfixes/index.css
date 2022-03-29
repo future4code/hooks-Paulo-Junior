@@ -116,6 +116,13 @@ td button {
     height: 100px;
 }
 
+#tabela-completa{
+    /*border: 2px solid red;*/
+    width: 900px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 #back-button {
     background-color: white;
