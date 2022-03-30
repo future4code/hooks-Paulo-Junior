@@ -44,15 +44,17 @@ div img {
     height: 40px;
     border-radius: 5px;
     font-size: 20px;
-    color: white;
+    color: black;
 }
 
 .button-buy:hover{
     background-color: #fe7e02;
+    color: white;
 }
 
 .botao-amarelo:hover {
     background-color: #c44f00;
+    color: white;
 }
 
 .container {
