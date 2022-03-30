@@ -47,6 +47,10 @@ div img {
     color: white;
 }
 
+.button-buy:hover{
+    background-color: #fe7e02;
+}
+
 .botao-amarelo:hover {
     background-color: #c44f00;
 }
