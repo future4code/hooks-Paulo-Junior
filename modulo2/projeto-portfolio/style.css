@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(231, 225, 225);
+
+}
+
+/* Cabeçalho*/
+header {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo {
+
+    color: midnightblue;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    font-size: large;
+    color: midnightblue;
+    font-family: 'Courier New', Courier, monospace;
+    flex-direction: row;
+    padding: 10px;
+
+}
+
+.nav a {
+    padding: 10px;
+}
+
+/* Menu*/
+
+.container {
+    position: relative;
+
+}
+
+#image {
+    position: relative;
+    width: 100%;
+    opacity: 0.5;
+}
+
+#texto {
+    position: absolute;
+    font-size: 80px;
+    left: 280px;
+    top: 130px;
+    color: rgb(10, 10, 71);
+
+}
+
+#texto2 {
+    position: absolute;
+    font-size: 70px;
+    left: 30px;
+    top: 230px;
+    color: rgb(10, 10, 71);
+
+}
+
+#texto3 {
+    position: absolute;
+    font-size: 80px;
+    left: 280px;
+    top: 310px;
+    color: rgb(10, 10, 71);
+
+}
+
+/*SOBRE*/
+
+.about-content {
+    margin-top: 0;
+   
+}
+
+.about-content h1 {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(10, 10, 71);
+}
+
+.about-content p {
+    border-style: groove;
+    border-color: rgb(10, 10, 71) ;
+    font-size: 30px;
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 50px;
+    height: 200px;
+    text-align: center;
+}
