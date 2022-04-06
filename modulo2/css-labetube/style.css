@@ -1,0 +1,76 @@
+html, body {
+    margin: 0;
+    top: 0;
+    box-sizing: border-box;
+
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 14vh 38vh 38vh 10vh;
+
+    grid-template-areas: "h h h h"
+                        "v1 v2 v3 v4" 
+                        "v5 v6 v7 v8"
+                        "f f f f ";
+
+}
+/* Cabeçalho */
+header{
+    background-color: orangered;
+    grid-area: h;
+}
+
+/* Menu */
+div{
+    gap: 10px;
+}
+
+.v1{
+    border: 1px solid red;
+    background-color: aquamarine;
+    grid-area: v1;
+}
+.v2{
+    border: 1px solid red;
+    background-color: aquamarine;
+    grid-area: v2;
+    
+}
+.v3{
+    border: 1px solid red;
+    background-color: aquamarine;
+    grid-area: v3;
+}
+.v4{
+    border: 1px solid red;
+    background-color: aquamarine;
+    grid-area: v4;
+}
+.v5{
+    border: 1px solid red;
+    background-color: aquamarine;
+    grid-area: v5;
+}
+.v6{
+    border: 1px solid red;
+    background-color: aquamarine;
+    grid-area: v6;
+}
+.v7{
+    border: 1px solid red;
+    background-color: aquamarine;
+    grid-area: v7;
+}
+.v8{
+    border: 1px solid red;
+    background-color: aquamarine;
+    grid-area: v8;
+}
+
+/* Rodapé */
+footer{
+    background-color: yellow;
+    grid-area: f;
+}
