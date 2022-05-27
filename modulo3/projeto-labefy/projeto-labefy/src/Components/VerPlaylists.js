@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import CriarPlaylist from './CriarPlaylist';
-import ReactAudioPlayer from 'react-audio-player';
+import ReactPlayer from "react-player";
+
 
 const DivInputs = styled.div`
     display: flex;
@@ -57,7 +58,7 @@ class VerPlaylists extends React.Component {
                 }
             )
                 .catch((error) => {
-                    alert("Algo deu errado :( ")
+                    alert("Algo deu errado! ")
                 }
             )
         }
@@ -133,7 +134,11 @@ class VerPlaylists extends React.Component {
                         <b>Cantor:</b>{track.artist}
                     </ul>
                     <ul>
-                        <ReactAudioPlayer src={track.url} controls/>
+                        <ReactPlayer url ={track.url}
+                         width="400px"
+                         height="50px"
+                         playing={false}
+                         controls={true} />
                     </ul>
                </div>
     }
