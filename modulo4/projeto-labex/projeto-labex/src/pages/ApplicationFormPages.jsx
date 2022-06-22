@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
 
-
 function ApplicationFormPages() {
   const navigate = useNavigate();
 
