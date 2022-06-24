@@ -7,6 +7,8 @@ import CreateTripPage from "./pages/CreateTripPage";
 import ApplicationFormPages from "./pages/ApplicationFormPages";
 import AdminHomePage from "./pages/AdminHomePage";
 
+// Continua o exercício do dia 20/06/2022
+
 import Error from "./pages/Error";
 
 function Router() {
