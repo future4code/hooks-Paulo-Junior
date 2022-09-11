@@ -1,8 +1,8 @@
 import app from "./app";
 import { v4 as uuidv4 } from "uuid";
-import connection from "./connection";
+import connection from "./database/connection";
 
-// Endpoint 01 - Criar Usuário
+// 1º Endpoint  - Criar Usuário
 app.post("/user", async (req, res) => {
     let errorCode = 400
     try {
@@ -11,11 +11,11 @@ app.post("/user", async (req, res) => {
         const email = req.body.email
 
         if (!name || !nickname || !email) {
-            throw new Error("Os campos não estão completos!")
+            throw new Error("Preencha todos os campos necessários")
         }
 
         const newUser = {
-            id : uuidv4(),
+            id : uuidv4(), // pode usar id: Number(Date.now()) , se quiser
             name,
             nickname,
             email
@@ -26,7 +26,7 @@ app.post("/user", async (req, res) => {
             VALUES("${newUser.id}", "${newUser.name}", "${newUser.nickname}", "${newUser.email}");
         `)
 
-        res.status(200).send("Usuário criado!")
+        res.status(200).send("Usuário criado com sucesso!")
     }
 
     catch (error : any) {
