@@ -23,7 +23,7 @@ app.post("/user", async (req, res) => {
 
         await connection.raw(`
             INSERT INTO TodoUserList(id, name, nickname, email)
-            VALUES("${newUser.id}", "${newUser.name}", "${newUser.nickname}", "${newUser.email}");
+            VALUES("${newUser.id}", "${newUser.name}", "${newUser.nickname}","${newUser.email}");
         `)
 
         res.status(200).send("Usuário criado com sucesso!")
