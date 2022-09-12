@@ -142,3 +142,164 @@ app.get("/task/:id", async (req, res) => {
         res.status(errorCode).send(error.message)
     }
 })
+// Endpoint 06 - Pegar Todos Usuários
+app.get("/getalluser", async (req, res) => {
+    const result = await connection.raw(`
+        SELECT * FROM TodoUserList
+    `)
+
+    res.send(result[0])
+})
+
+// Endpoint 07 - Pegar Tasks Criadas por um Usuário
+app.get("/user/task/:id" ,async (req, res) => {
+    let errorCode = 400
+    try {
+        const id = req.params.id
+
+        if (id.length < 4) {
+            throw new Error("Os campos não estão completos!")
+        }
+
+        const task = await connection.raw(`
+            SELECT TodoTaskList.*, DATE_FORMAT(limit_date,'%d/%m/%Y') as limit_date, TodoUserList.nickname
+            FROM TodoUserList, TodoTaskList 
+            WHERE TodoTaskList.creator_user_id = "${id}" AND TodoUserList.id = "${id}";
+        `)
+
+        res.status(200).send(task[0])
+    }
+
+    catch (error : any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+// Endpoint 08 - Pesquisar Usuário
+app.get("/user/search/:name", async (req, res) => {
+    let errorCode = 400
+    try {
+        const name = req.params.name
+
+        if (name === ":name") {
+            throw new Error("Os campos não estão completos!")
+        }
+
+        const user = await connection.raw(`
+            SELECT id, nickname 
+            FROM TodoUserList
+            WHERE name = "${name}" OR email = "${name}";
+        `)
+
+        res.status(200).send(user[0])
+    }
+
+    catch (error : any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+// Endpoint 12 - Atualizar o Status da Task pelo Id
+app.put("/task/status/:id/", async (req, res) => {
+    let errorCode = 400
+    try {
+        const id = req.params.id
+        const status = req.body.status
+
+        if (id.length < 4 || !status) {
+            throw new Error("Os campos não estão completos!")
+        }
+
+        await connection.raw(`
+            UPDATE TodoTaskList
+            SET status = "${status}"
+            WHERE id = "${id}";
+        `)
+
+        res.status(200).send("Status alterado!")
+    }
+
+    catch (error : any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+// Endpoint 13 - Pegar Todas as Tasks por Status
+app.get("/task", async (req, res) => {
+    let errorCode = 400
+    try {
+        const status = req.query.status
+
+        if (!status) {
+            throw new Error("Os campos não estão completos!")
+        }
+
+        const result = await connection.raw(`
+            SELECT TodoTaskList.*, DATE_FORMAT(limit_date,'%d/%m/%Y') as limit_date, TodoUserList.nickname
+            FROM TodoUserList, TodoTaskList
+            WHERE TodoTaskList.status = "${status}"  
+            AND TodoTaskList.creator_user_id = TodoUserList.id;
+        `)
+
+        res.status(200).send(result[0])
+    }
+
+    catch (error : any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+// Endpoint 19 - Deletar Task
+app.delete("/task/delete/:id", async (req, res) => {
+    let errorCode = 400
+    try {
+        const id = req.params.id
+
+        if (id.length < 4) {
+            throw new Error("Os campos não estão completos!")
+        }
+
+        await connection.raw(`
+            DELETE FROM TodoTaskList
+            WHERE id = "${id}";
+        `)
+
+        res.status(200).send("Task apagada!")
+    }
+
+    catch (error : any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+// Endpoint 20 - Deletar Usuário
+app.delete("/user/delete/:id", async (req, res) => {
+    let errorCode = 400
+    try {
+        const id = req.params.id
+
+        if (id.length < 4) {
+            throw new Error("Os campos não estão completos!")
+        }
+
+        await connection.raw(`
+            DELETE FROM TodoTaskList WHERE creator_user_id = "${id}";
+            DELETE FROM TodoUserList WHERE id = "${id}";
+        `)
+
+        res.status(200).send("Usuário e suas tasks apagados!")
+    }
+
+    catch (error : any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+// Endpoint Bônus - Pegar Todas as Tasks
+app.get("/tasks", async (req, res) => {
+    const result = await connection.raw(`
+        SELECT * FROM TodoTaskList
+    `)
+
+    res.send(result[0])
+})
