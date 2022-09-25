@@ -4,9 +4,9 @@ import connection from "./database/connection";
 import { Request, Response } from "express"
 import { User } from "./types";
 
-// Cadastrar Usuário
+// 01 Cadastrar Usuário
 
-app.post("/create-user", async (req: Request, res: Response) => {
+app.post("/create-users", async (req: Request, res: Response) => {
     let errorCode = 400
     try {
         const name  = req.body.name
@@ -32,7 +32,25 @@ app.post("/create-user", async (req: Request, res: Response) => {
         res.status(200).send("Usuário criado!")
     }
 
-    catch (err : any) {
-        res.status(errorCode).send(err.message)
+    catch (error : any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+// 02 Buscar Usuários
+
+
+app.get("/users", async (req: Request, res: Response) => {
+    let errorCode = 400
+    try {
+        const userList = await connection.raw(`
+        SELECT * FROM labecommerce_users
+        ORDER BY name ASC;
+        `)
+
+        res.status(200).send(userList)
+
+    } catch (error: any) {
+        res.status(errorCode).send(error.message)
     }
 })

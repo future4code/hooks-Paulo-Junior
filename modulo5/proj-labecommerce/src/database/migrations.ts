@@ -1,7 +1,7 @@
 import connection from "./connection";
 import users from "./users.json";
 
-const printError = (error: any) => { console.log(error.sqlMessage || error.message) }
+function printError(error: any): void { console.log(error.sqlMessage || error.message); }
 
 const createTables = () => connection
    .raw(`

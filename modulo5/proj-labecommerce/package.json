@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev ./src/index.ts",
-    "start": "tsc && node ./build/index.js"
+    "start": "tsc && node ./build/index.js",
+    "migrations": "tsc && node ./build/database/migrations.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Paulo-Junior",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.12",
