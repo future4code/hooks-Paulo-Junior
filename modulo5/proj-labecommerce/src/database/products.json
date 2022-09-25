@@ -1,0 +1,21 @@
+[
+	{
+		"id" : "5f43cfb5-f15d-4baf-a631-f92b32be3859",
+		"name" : "Playstation 5",
+		"price" : 4500,
+		"image_url" : "https://imgur.com/a/wYje3R5"
+	},
+	{
+		"id" : "2eaea984-2d11-4a95-8ca3-e4da372db8eb",
+		"name" : "Suporte para monitor",
+		"price" : 200,
+		"image_url" : "https://imgur.com/a/e7F0ETF"
+	},
+	{
+		"id" : "07b03a14-3b8f-402d-9de0-ad8fd59b224d",
+		"name" : "Calculadora",
+		"price" : 50,
+		"image_url" : "https://i.imgur.com/pwO7vAE.jpg"
+	}
+	
+]
