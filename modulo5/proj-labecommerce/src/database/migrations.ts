@@ -1,6 +1,7 @@
 import connection from "./connection";
 import users from "./users.json";
 import products from "./products.json";
+import purchases from "./purchases.json";
 
 function printError(error: any): void { console.log(error.sqlMessage || error.message); }
 
@@ -35,9 +36,15 @@ const createTables = () => connection
       .then(() => { console.log("Produto criado com sucesso!") })
       .catch(printError)
 
+      const insertPurchases = () => connection("labecommerce_purchases")
+       .insert(purchases)
+       .then(() => { console.log("Compras criadas") })
+       .catch(printError)
+
      const closeConnection = () => { connection.destroy() }
 
      createTables()
       .then(insertUsers)
       .then(insertProducts)
+      .then(insertPurchases)
       .finally(closeConnection)
