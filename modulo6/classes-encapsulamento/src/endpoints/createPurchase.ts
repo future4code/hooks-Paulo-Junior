@@ -43,13 +43,18 @@ export const createPurchase = async (req: Request, res: Response) => {
         // COM CLASS
         const product = new Product(findProduct[0].id, findProduct[0].name, findProduct[0].price)
 
-        const newPurchase: Purchase = {
-            id: Date.now().toString(),
-            userId,
-            productId,
-            quantity,
-            totalPrice: product.price * quantity
-        }
+
+        // COM  TYPE
+        // const newPurchase: Purchase = {
+        //     id: Date.now().toString(),
+        //     userId,
+        //     productId,
+        //     quantity,
+        //     totalPrice: product.price * quantity
+        // }
+
+        // COM CLASS    
+        const newPurchase = new Purchase(Date.now().toString(), userId, productId, quantity, product.price * quantity)
 
         await connection(TABLE_PURCHASES).insert({
             id: newPurchase.id,
