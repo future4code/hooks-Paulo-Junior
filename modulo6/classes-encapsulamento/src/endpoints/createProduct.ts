@@ -13,11 +13,15 @@ export const createProduct = async (req: Request, res: Response) => {
             throw new Error("Body inválido.")
         }
 
-        const newProduct: Product = {
-            id: Date.now().toString(),
-            name,
-            price
-        }
+        // COM TYPE
+        // const newProduct: Product = {
+        //     id: Date.now().toString(),
+        //     name,
+        //     price
+        // }
+
+        // COM CLASS
+        const newProduct = new Product(Date.now().toString(), name, price)
 
         await connection(TABLE_PRODUCTS).insert({
             id: newProduct.id,

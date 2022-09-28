@@ -33,11 +33,15 @@ export const createPurchase = async (req: Request, res: Response) => {
             throw new Error("Produto não encontrado.")
         }
         
-        const product: Product = {
-            id: findProduct[0].id,
-            name: findProduct[0].name,
-            price: findProduct[0].price
-        }
+        // COM TYPE
+        // const product: Product = {
+        //     id: findProduct[0].id,
+        //     name: findProduct[0].name,
+        //     price: findProduct[0].price
+        // }
+
+        // COM CLASS
+        const product = new Product(findProduct[0].id, findProduct[0].name, findProduct[0].price)
 
         const newPurchase: Purchase = {
             id: Date.now().toString(),

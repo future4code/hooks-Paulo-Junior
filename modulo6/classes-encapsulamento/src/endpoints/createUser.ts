@@ -12,12 +12,16 @@ export const createUser = async (req: Request, res: Response) => {
         if (!email || !password) {
             throw new Error("Body inválido.")
         }
+        
+        // COM TYPE 
+        // const newUser: User = {
+        //     id: Date.now().toString(),
+        //     email,
+        //     password
+        // }
 
-        const newUser: User = {
-            id: Date.now().toString(),
-            email,
-            password
-        }
+        // COM CLASS
+        const newUser = new User(Date.now().toString(), email, password)
 
         await connection(TABLE_USERS).insert({
             id: newUser.id,
