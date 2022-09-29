@@ -12,6 +12,8 @@ import { getUserPurchases } from './endpoints/getUserPurchases'
 dotenv.config()
 const app = express()
 
+//  adsfasd
+
 app.use(express.json())
 app.use(cors())
 
