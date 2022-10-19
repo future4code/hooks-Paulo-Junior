@@ -1,0 +1,20 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Paulo",
+    "nickname": "Pj23",
+    "email": "pj23@email.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:3003/task
+Content-Type: application/json
+
+{
+    "title": "aula arquitetura III",
+    "description": "aula top",
+    "deadline": "17/10",
+    "authorId": "1665700222521"
+}
